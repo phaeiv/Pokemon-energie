@@ -20,7 +20,7 @@ NAME	=	Pokémon_energie
 
 SRC	=	src/main.c		\
 		src/get_next_line.c	\
-		src/my_str_isnum.c
+		src/key.c
 
 OBJ	=	$(SRC:.c=.o)
 

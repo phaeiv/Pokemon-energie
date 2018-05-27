@@ -38,6 +38,7 @@ typedef struct game_s
 	struct_time_t Clock;
 	intro_t intro;
 	sfEvent event;
+	int game_cene;
 	float game_time;
 	float time;
 } game_t;
@@ -54,6 +55,8 @@ typedef struct var_s
 char	*get_next_line(int fd);
 
 int	my_str_isnum(char const *str);
+
+int	acces_menu();
 
 #ifndef  READ_SIZE
 #    define  READ_SIZE (1)
