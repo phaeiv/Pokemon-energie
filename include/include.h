@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stddef.h>
+#include "include/val_cene.h"
+#include "include/key_manette.h"
 
 typedef struct setting_s
 {

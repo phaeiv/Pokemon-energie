@@ -56,21 +56,21 @@ int		acces_menu()
 		return (1);
 	else if (sfKeyboard_isKeyPressed(sfKeyZ) == sfTrue)
 		return (1);
-	else if (sfJoystick_isButtonPressed(0, 0) == sfTrue)
+	else if (sfJoystick_isButtonPressed(0, KEY_A) == sfTrue)
 		return (1);
-	else if (sfJoystick_isButtonPressed(0, 1) == sfTrue)
+	else if (sfJoystick_isButtonPressed(0, KEY_B) == sfTrue)
 		return (1);
-	else if (sfJoystick_isButtonPressed(0, 2) == sfTrue)
+	else if (sfJoystick_isButtonPressed(0, KEY_X) == sfTrue)
 		return (1);
-	else if (sfJoystick_isButtonPressed(0, 3) == sfTrue)
+	else if (sfJoystick_isButtonPressed(0, KEY_Y) == sfTrue)
 		return (1);
-	else if (sfJoystick_isButtonPressed(0, 4) == sfTrue)
+	else if (sfJoystick_isButtonPressed(0, KEY_LB) == sfTrue)
 		return (1);
-	else if (sfJoystick_isButtonPressed(0, 5) == sfTrue)
+	else if (sfJoystick_isButtonPressed(0, KEY_RB) == sfTrue)
 		return (1);
-	else if (sfJoystick_isButtonPressed(0, 6) == sfTrue)
+	else if (sfJoystick_isButtonPressed(0, KEY_SELECT) == sfTrue)
 		return (1);
-	else if (sfJoystick_isButtonPressed(0, 7) == sfTrue)
+	else if (sfJoystick_isButtonPressed(0, KEY_START) == sfTrue)
 		return (1);
 	return (0);
 }
