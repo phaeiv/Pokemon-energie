@@ -27,6 +27,11 @@ typedef struct struct_time_s
         float Second;
 } struct_time_t;
 
+typedef struct menu_s
+{
+	struct_time_t Clock;
+} menu_t;
+
 typedef struct intro_s
 {
 	sfColor color;
@@ -39,6 +44,7 @@ typedef struct game_s
 	setting_t setting;
 	struct_time_t Clock;
 	intro_t intro;
+	menu_t menu;
 	sfEvent event;
 	int game_cene;
 	float game_time;

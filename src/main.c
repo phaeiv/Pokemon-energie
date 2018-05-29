@@ -8,7 +8,7 @@ game_t		*load_setting(game_t *game)
 				atoi(get_next_line(fd)), 32};
 	game->setting.mode = mode;
 	game->Clock.Clock = sfClock_create();
-	game->menu.Segond = fClock_create();
+	game->menu.Clock.Clock = sfClock_create();
 	game->intro.color = sfColor_fromRGBA(255, 255, 255, 0);
 	game->intro.text = sfText_create();
 	game->intro.font = sfFont_createFromFile("font/Pokemon_Classic.ttf");
@@ -36,11 +36,14 @@ void		introduction(game_t *game)
 
 void		game_loop(game_t *game)
 {
-	sfClock clock;
 	while (sfRenderWindow_isOpen(game->setting.window))
 	{
 		game->Clock.Time = sfClock_getElapsedTime(game->Clock.Clock);
 		game->Clock.Second = game->Clock.Time.microseconds / 1000000.0;
+		if (game->game_cene == 2) {
+			game->menu.Clock.Time = sfClock_getElapsedTime(game->menu.Clock.Clock);
+			game->menu.Clock.Second = game->Clock.Time.microseconds / 1000000.0;
+		}
 		while (sfRenderWindow_pollEvent(game->setting.window, &game->event))
 	       	{
 		       	if (game->event.type == sfEvtClosed)
@@ -52,12 +55,11 @@ void		game_loop(game_t *game)
 		if (acces_menu(game) == 1 && game->game_cene < 1 && game->Clock.Second >= 10.0)
 			game->game_cene = 1;
 		if (game->game_cene == 1) {
-			clock = sfClock_create();
-			game->menu.Time = sfClock_getElapsedTime(clock);
-			Clock.Second = game->Clock.Time.microseconds / 1000000.0;
-		}
+			game->menu.Clock.Time = sfClock_getElapsedTime(game->menu.Clock.Clock);
+			game->menu.Clock.Second = game->Clock.Time.microseconds / 1000000.0;
+			game->game_cene = 0;
 			sfRenderWindow_clear(game->setting.window, sfWhite);
-		game->game_cene = 0;
+		}
 		sfRenderWindow_display(game->setting.window);
 	}
 }
